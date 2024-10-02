@@ -1,6 +1,6 @@
-# chip8-emu
+# Chip8 Emulator
 
-# How to run
+## How to run
 
 ```sh
 mkdir build
