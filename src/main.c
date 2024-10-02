@@ -465,7 +465,13 @@ void updateKeypad(Chip8* chip8) {
 int main(int argc, char* argv[]) {
     Chip8 chip8;
     chip8Init(&chip8);
-    chip8LoadRom(&chip8, "./roms/pong.rom");
+
+    if (argc != 2) {
+        printf("chip8_emu <rom_path>\n");
+        return 1;
+    } 
+
+    chip8LoadRom(&chip8, argv[1]);
 
     InitWindow(DISPLAY_WIDTH * SCALING, DISPLAY_HEIGHT * SCALING, "CHIP-8 emu");
     RenderTexture2D framebuffer = LoadRenderTexture(DISPLAY_WIDTH, DISPLAY_HEIGHT+1);

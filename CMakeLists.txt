@@ -28,14 +28,7 @@ endif()
 # Our Project
 
 add_executable(${PROJECT_NAME} src/main.c)
-#set(raylib_VERBOSE 1)
-target_link_libraries(${PROJECT_NAME} raylib)
-
-# Web Configurations
-if (${PLATFORM} STREQUAL "Web")
-    # Tell Emscripten to build an example.html file.
-    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".html")
-endif()
+target_link_libraries(${PROJECT_NAME} raylib m)
 
 # Checks if OSX and links appropriate frameworks (Only required on MacOS)
 if (APPLE)
